@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+export const metadata:Metadata={title:"Terms of Service",description:"Terms for using the NCHURE Technologies website."};
+export default function TermsPage(){return <section className="page-intro"><div className="container"><span className="eyebrow">Legal / Website terms</span><h1>Terms of service.</h1><p>Last updated: 19 October 2026. These terms cover use of the NCHURE Technologies website.</p><div className="prose-block">
+  <h2>Website information</h2><p>This website describes NCHURE Technologies' capabilities and potential approaches to digital systems, software, workflow automation, business operations, security, marketing infrastructure, and AI. Descriptions are general information, not a binding proposal or guarantee of a specific deliverable.</p>
+  <h2>Scope of services</h2><p>Any actual project, service, implementation, integration, timeline, price, support commitment, or acceptance criteria should be defined in a separate written proposal or agreement agreed by the parties.</p>
+  <h2>Product and project previews</h2><p>Pages marked as illustrative, demonstration concepts, or product directions are not representations that a production system, integration, client project, or feature is live. Details may change as requirements are validated and implementation progresses.</p>
+  <h2>No guaranteed outcomes</h2><p>Business and technology outcomes depend on requirements, data quality, third-party platforms, user adoption, market conditions, and other factors. No performance, ranking, savings, lead volume, or revenue result is guaranteed by website content.</p>
+  <h2>Third-party services</h2><p>Some implementations may rely on external hosting, communication, payment, analytics, AI, or software providers. Those services are subject to their own terms, availability, security practices, and charges.</p>
+  <h2>Acceptable use</h2><p>You agree not to misuse the website, attempt unauthorized access, disrupt its operation, submit malicious content, or use contact details for unlawful purposes.</p>
+  <h2>Contact</h2><p>Questions about these terms can be sent to <a href={"mailto:"+siteConfig.email}>{siteConfig.email}</a>.</p>
+  <h2>Review before production</h2><p>These general website terms should be reviewed for the operating jurisdiction and the actual services offered before public launch.</p>
+</div></div></section>;}

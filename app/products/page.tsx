@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, CircleDashed, Workflow } from "lucide-react";
+
+export const metadata:Metadata={title:"Products",description:"Explore NCHURE product directions, including an illustrative Lead Management workflow preview."};
+export default function ProductsPage(){return <>
+  <section className="page-intro"><div className="container"><span className="eyebrow">Products / Product direction</span><h1>Purpose-built tools for everyday work.</h1><p>Products should help teams handle real workflows more clearly. This page distinguishes interface previews from connected, production software.</p><div className="page-intro-meta"><span><CircleDashed size={15}/> Status shown transparently</span><span><CheckCircle2 size={15}/> No invented adoption or performance claims</span></div></div></section>
+  <section className="section"><div className="container"><article className="detail-panel"><div className="detail-meta"><b>01</b><span>Illustrative preview · In development</span></div><h2 style={{fontSize:32,marginTop:15}}>NCHURE Lead Management</h2><p style={{maxWidth:700}}>A product direction for capturing enquiries, assigning ownership, tracking status, planning follow-ups, and recording outcomes in a single workflow. The interface shown is illustrative and is not connected to a live CRM database from this website.</p><div className="detail-list-grid" style={{marginTop:25}}>{["Capture enquiries from configured channels","Assign ownership and follow-up tasks","Track stages and activity","Review pipeline visibility"].map((item)=><div className="detail-list-item" key={item}><Workflow size={17}/><span>{item}</span></div>)}</div><div style={{marginTop:28}}><Link href="/products/lead-management" className="button button-primary">Explore product direction <ArrowUpRight size={16}/></Link></div></article></div></section>
+</>;}

@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+export const metadata:Metadata={title:"Privacy Policy",description:"How NCHURE Technologies handles information submitted through this website."};
+export default function PrivacyPage(){return <section className="page-intro"><div className="container"><span className="eyebrow">Legal / Privacy</span><h1>Privacy policy.</h1><p>Last updated: 19 October 2026. This page explains the intended handling of information submitted through the NCHURE Technologies website.</p><div className="prose-block">
+  <h2>Information you provide</h2><p>If you submit an enquiry, the form may ask for your name, business name, work email, phone number, industry, service of interest, and a description of your business requirement. Please do not submit passwords, payment details, health information, or other sensitive personal data through this form.</p>
+  <h2>How information is used</h2><p>Enquiry details are used to review and respond to your request, communicate about the requirement, and determine an appropriate next step. The website does not implement a public account system or a CRM database for contact-form records.</p>
+  <h2>Email delivery providers</h2><p>When live email delivery is configured, form details are transmitted to the email service selected by the website operator and delivered to the configured NCHURE contact inbox. That service may process information to deliver and protect the message under its own terms and privacy policy.</p>
+  <h2>Retention and access</h2><p>Enquiry messages may remain in the receiving mailbox according to the business's retention and deletion practices. Access should be limited to people who need the information to respond. Do not send information that is not necessary for the enquiry.</p>
+  <h2>Cookies and analytics</h2><p>This website does not intentionally include advertising trackers or an analytics integration in this implementation. Hosting or security providers may process technical request information to operate the service.</p>
+  <h2>Your questions</h2><p>For privacy-related questions, contact <a href={"mailto:"+siteConfig.email}>{siteConfig.email}</a> or call <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>.</p>
+  <h2>Review before production</h2><p>This starter policy should be checked against the actual email provider, retention practices, future integrations, and applicable legal requirements before the site is launched publicly.</p>
+</div></div></section>;}

@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+export default function NotFound(){return <section className="section"><div className="container"><div className="empty-state"><span className="eyebrow">404 / Page not found</span><h1>This page isn't here.</h1><p>The link may be outdated, or the page may have moved. Return to the homepage or explore the solutions directory.</p><div className="hero-actions" style={{justifyContent:"center"}}><Link href="/" className="button button-primary"><ArrowLeft size={16}/> Back home</Link><Link href="/solutions" className="button button-secondary">Explore solutions <ArrowUpRight size={16}/></Link></div></div></div></section>;}

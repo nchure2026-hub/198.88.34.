@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, CircleHelp } from "lucide-react";
+import { notFound } from "next/navigation";
+import { solutions } from "@/lib/content";
+
+type PageProps = { params: Promise<{ slug:string }> };
+export function generateStaticParams() { return solutions.map((solution)=>({slug:solution.slug})); }
+export async function generateMetadata({params}:PageProps):Promise<Metadata>{const {slug}=await params;const solution=solutions.find((item)=>item.slug===slug);if(!solution)return{title:"Solution not found"};return{title:solution.title,description:solution.intro};}
+
+export default async function SolutionDetailPage({params}:PageProps){
+  const {slug}=await params;const solution=solutions.find((item)=>item.slug===slug);if(!solution)notFound();
+  return <>
+    <section className="detail-hero"><div className="container"><div className="detail-meta"><b>{solution.number}</b><span>Solution capability</span></div><h1>{solution.title}</h1><p>{solution.intro}</p><div className="detail-hero-actions"><Link href="/contact" className="button button-primary button-large">Discuss this solution <ArrowUpRight size={16}/></Link><Link href="/solutions" className="button button-secondary">All solutions</Link></div></div></section>
+    <section className="section section-white"><div className="container"><div className="detail-columns"><article className="detail-panel"><span className="panel-label">The business problem</span><h2>Where the friction begins.</h2><p>{solution.problem}</p></article><article className="detail-panel"><span className="panel-label">Proposed approach</span><h2>Design around the process.</h2><p>{solution.approach}</p></article></div></div></section>
+    <section className="section"><div className="container"><div className="section-heading"><span className="eyebrow">Possible scope</span><h2>What the solution could include.</h2><p>These are potential components to evaluate during discovery. The final scope depends on your requirements, current systems, integration access, and agreement.</p></div><div className="detail-list-grid">{solution.includes.map((item)=><div className="detail-list-item" key={item}><CheckCircle2 size={17}/><span>{item}</span></div>)}</div></div></section>
+    <section className="section section-white"><div className="container"><div className="section-heading"><span className="eyebrow">Implementation approach</span><h2>A clear path from need to delivery.</h2><p>The exact project plan is confirmed after discovery and depends on the selected platforms and scope.</p></div><div className="numbered-workflow">{solution.workflow.map((item,index)=><div className="numbered-step" key={item}><span>STEP 0{index+1}</span><p>{item}</p></div>)}</div><div className="detail-panel" style={{marginTop:38,background:"#F7F5F2"}}><span className="panel-label">Intended operational benefit</span><h2>More clarity, with fewer process gaps.</h2><p>{solution.outcome}</p></div></div></section>
+    <section className="section"><div className="container"><div className="dependencies-box"><div><span className="eyebrow">Before implementation</span><h2>Dependencies to clarify</h2><p className="disclaimer" style={{marginTop:9}}>These details help establish a realistic scope and timeline.</p></div><ul>{solution.dependencies.map((item)=><li key={item}><CircleHelp size={15}/>{item}</li>)}</ul></div><div className="detail-panel" style={{marginTop:18}}><span className="panel-label">Who this can help</span><p>{solution.idealFor}</p></div></div></section>
+    <section className="cta-band"><div className="container cta-band-inner"><div className="cta-band-copy"><span className="eyebrow">Next step</span><h2>Make the process clearer.</h2><p>Discuss the current workflow, available tools, and what a useful first implementation would need to cover.</p></div><Link href="/contact" className="button button-light button-large">Let's discuss <ArrowUpRight size={16}/></Link></div></section>
+  </>;
+}
