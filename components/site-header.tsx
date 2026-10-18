@@ -13,7 +13,6 @@ function BrandMark() {
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
   useEffect(() => {
     if (!menuOpen) return;
     const handleEscape = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
@@ -22,14 +21,14 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return <header className="site-header"><div className="container nav-inner">
-    <Link href="/" className="brand-link" aria-label="NCHURE Technologies home"><BrandMark /></Link>
+    <Link href="/" className="brand-link" aria-label="NCHURE Technologies home" onClick={() => setMenuOpen(false)}><BrandMark /></Link>
     <button type="button" className="mobile-menu-toggle" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
     <nav id="primary-navigation" className={"primary-nav" + (menuOpen ? " is-open" : "")} aria-label="Main navigation">
       {siteConfig.nav.map((item) => {
         const isCurrent = item.href === "/" ? pathname === "/" : pathname === item.href || pathname.startsWith(item.href + "/");
-        return <Link href={item.href} key={item.href} className={"nav-link" + (isCurrent ? " is-current" : "")} aria-current={isCurrent ? "page" : undefined}>{item.label}</Link>;
+        return <Link href={item.href} key={item.href} className={"nav-link" + (isCurrent ? " is-current" : "")} aria-current={isCurrent ? "page" : undefined} onClick={() => setMenuOpen(false)}>{item.label}</Link>;
       })}
-      <Link href="/contact" className="button button-primary nav-cta">Discuss Your Business <ArrowUpRight size={16} aria-hidden="true" /></Link>
+      <Link href="/contact" className="button button-primary nav-cta" onClick={() => setMenuOpen(false)}>Discuss Your Business <ArrowUpRight size={16} aria-hidden="true" /></Link>
     </nav>
   </div></header>;
 }
