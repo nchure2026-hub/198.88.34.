@@ -7,7 +7,7 @@ export function SiteFooter() {
   return <footer className="site-footer">
     <div className="container footer-top">
       <div className="footer-brand-col">
-        <Link href="/" className="brand-link footer-brand" aria-label="NCHURE Technologies home"><span className="brand-lockup"><span className="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M8 29V9h6l10 13V9h6v20h-6L14 16v13H8Z" fill="currentColor" /><path d="M7 6h24" stroke="#0F9D7A" strokeWidth="2.5" strokeLinecap="round" /></svg></span><span className="brand-type"><strong>NCHURE</strong><span>TECHNOLOGIES</span></span></span></Link>
+        <Link href="/" className="brand-link footer-brand" aria-label="NCHURE Technologies home"><span className="brand-lockup"><span className="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M8 29V9h6l10 13V9h6v20h-6L14 16v13H8Z" fill="currentColor" /><path d="M7 6h24" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" /></svg></span><span className="brand-type"><strong>NCHURE</strong><span>TECHNOLOGIES</span></span></span></Link>
         <p>Connected business systems, built around how your business actually works.</p><Link href="/contact" className="footer-text-link">Start a conversation <ArrowUpRight size={15} /></Link>
       </div>
       <div className="footer-links-col"><h2>Solutions</h2>{solutions.slice(0,5).map((solution) => <Link key={solution.slug} href={"/solutions/" + solution.slug}>{solution.title}</Link>)}<Link href="/solutions" className="footer-all-link">All solutions <ArrowUpRight size={14} /></Link></div>

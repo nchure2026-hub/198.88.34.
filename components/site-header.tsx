@@ -7,7 +7,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 
 function BrandMark() {
-  return <span className="brand-lockup"><span className="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M8 29V9h6l10 13V9h6v20h-6L14 16v13H8Z" fill="currentColor" /><path d="M7 6h24" stroke="#0F9D7A" strokeWidth="2.5" strokeLinecap="round" /></svg></span><span className="brand-type"><strong>NCHURE</strong><span>TECHNOLOGIES</span></span></span>;
+  return <span className="brand-lockup"><span className="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M8 29V9h6l10 13V9h6v20h-6L14 16v13H8Z" fill="currentColor" /><path d="M7 6h24" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" /></svg></span><span className="brand-type"><strong>NCHURE</strong><span>TECHNOLOGIES</span></span></span>;
 }
 
 export function SiteHeader() {

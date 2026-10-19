@@ -2,6 +2,9 @@
 
 A responsive Next.js website for NCHURE Technologies, positioned around connected business systems, operations, automation, and practical AI.
 
+## Visual identity
+The brand palette is White `#FFFFFF`, Warm Ivory `#F7F5F2`, Deep Navy `#17232D`, and Black `#000000`. The interface uses neutral tints for borders and secondary text; the previous green and lime brand accents have been removed.
+
 ## Stack
 - Next.js App Router + TypeScript
 - Tailwind CSS for utility support and a custom CSS design system
