@@ -47,3 +47,7 @@ Never prefix secret values with `NEXT_PUBLIC_`. The form uses server-side valida
 - Review legal pages against actual business operations and applicable law.
 - Run `npm run lint` and `npm run build`.
 - Test keyboard navigation, mobile layouts, links, and the production contact workflow.
+
+
+## Projects preview section
+The Projects page includes four illustrative software UI models: Billing System, Attendance Management System, Business Management System, and School Management System. These are explicitly labelled preview-only screens with sample labels, not connected production applications or verified case studies.

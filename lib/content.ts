@@ -96,3 +96,48 @@ export const projectConcepts: ProjectConcept[] = [
   { title:"Clinic Front-Desk Workflow", category:"Healthcare operations · Demonstration concept", summary:"A concept for organizing appointment enquiries, front-desk tasks, billing steps, and staff hand-offs.", problem:"Front-desk work can become fragmented when appointments, communication, and administrative tasks are tracked separately.", approach:"Concept direction: make non-clinical tasks, appointment status, and next actions more visible while keeping sensitive information protected.", stack:["Responsive interface","Role design","Privacy-conscious workflows"] },
   { title:"Workforce Attendance Console", category:"Workforce operations · Demonstration concept", summary:"A product direction for presenting attendance events, team status, review queues, and exportable summaries.", problem:"Manual attendance reconciliation can create repeated work for supervisors and administrative teams.", approach:"Concept direction: define event capture, exception review, access permissions, and reporting needs before integrating devices or identity services.", stack:["Workflow mapping","Access controls","Integration discovery"] }
 ];
+
+
+export type DemoProject = {
+  slug: string;
+  title: string;
+  category: string;
+  summary: string;
+  preview: "billing" | "attendance" | "business" | "school";
+  workflows: string[];
+};
+
+export const demoProjects: DemoProject[] = [
+  {
+    slug: "billing-system",
+    title: "Billing System",
+    category: "Billing & invoicing",
+    summary: "An illustrative billing workspace for organizing invoice drafts, customer references, payment follow-ups, and document review.",
+    preview: "billing",
+    workflows: ["Invoices and quotations", "Payment status review", "Customer billing records"]
+  },
+  {
+    slug: "attendance-management-system",
+    title: "Attendance Management System",
+    category: "Workforce operations",
+    summary: "A concept interface for viewing attendance entries, shift context, check-in events, and items that need supervisor review.",
+    preview: "attendance",
+    workflows: ["Attendance register", "Shift and check-in records", "Exception review"]
+  },
+  {
+    slug: "business-management-system",
+    title: "Business Management System",
+    category: "Connected business operations",
+    summary: "A proposed operational workspace connecting customer records, sales, inventory, purchasing, team tasks, and business reporting.",
+    preview: "business",
+    workflows: ["Customer and sales records", "Inventory and purchasing", "Tasks and reporting"]
+  },
+  {
+    slug: "school-management-system",
+    title: "School Management System",
+    category: "Education administration",
+    summary: "An illustrative school administration view for student records, class registers, schedules, and fee follow-up workflows.",
+    preview: "school",
+    workflows: ["Student and class records", "Attendance and timetable", "Fee follow-up"]
+  }
+];
